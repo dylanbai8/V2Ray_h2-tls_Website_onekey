@@ -41,24 +41,6 @@ http://www.freenom.com
 需更换ns服务器，默认ns服务器在国内很不稳定。
 ```
 
-嵌套 cloudflare (fullSSL+CDN) 节省资源 人人有责 如果你的ip没有墙 请勿开启
+HTTP2 CDN 嵌套
 ```
-# 提前准备
-购买域名、VPS；
-注册cloudflare，提前24小时配置NS并解析域名。
-确保所解析的域名Status位置关闭默认的cdn加速，变为灰色云朵状态。
-
-# 开启 cloudflare (fullssl+cdn)
-安装完毕一键脚本，并测试V2ray可以正常使用之后。
-注意：在此步骤之前，勿必保持所解析的域名Status处为灰色云朵（及关闭cdn）。重做系统或重新安装时也勿必关闭此处设置。
-
-1.开启全程ssl加密
-在 Cloudflare 的 Crypto 那里设置 SSL 为 Full
-
-2.开启cdn隐藏ip地址
-返回 Status 点击灰色云朵图标 将其变成 橙色云朵状态 开启cdn，即是 DNS and HTTP proxy(CDN)
-
-其它配置项尽量保持默认，这样有助于你排错。
-```
-
-提示：重装系统（Debian 8）能解决 100% 的安装错误，HTTP header 分流客户端配置容易出错认真检查配置信息。
+又拍云、七牛、阿里都不错，腾讯的 h2 还在内测，百度不清楚。速度提升非常大，也非常稳定，高峰期毫无压力，在重点 IP 段也无所畏惧。（cloudflare 不支持 http2）
